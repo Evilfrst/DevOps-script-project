@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: script-tool
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: script-tool
+  template:
+    metadata:
+      labels:
+        app: script-tool
+    spec:
+      containers:
+      - name: script-tool
+        image: script-tool:latest
+        imagePullPolicy: Never
